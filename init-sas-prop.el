@@ -1,5 +1,4 @@
-
-;;; This file bootstraps the configuration, which is divided into
+;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
 
 (setq user-full-name "Andranik Samvelovich Simonyan"
@@ -32,7 +31,30 @@
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 ;; Calls (package-initialize)
-;(require 'init-elpa)      ;; Machinery for installing required packages
+(require 'mvg-elpa)    ;; Machinery for installing required packages
 ;(require 'init-exec-path) ;; Set up $PATH
 
-(load "~/.emacs.d/lisp/sas-init-ergoemacs.el")
+;(require-package 'wgrep)
+
+(require 'init-themes)
+(require 'init-gui-frames)
+(require 'init-ido)
+
+(require 'mvg-auto-complete)
+
+(require 'init-sessions)
+(require 'init-fonts)
+
+(require 'sas-init-ergoemacs)
+
+;;----------------------------------------------------------------------------
+;; Locales (setting them earlier in this file doesn't work in X)
+;;----------------------------------------------------------------------------
+(require 'init-locales)
+
+(add-hook 'after-init-hook
+          (lambda ()
+            (message "init completed in %.2fms"
+                     (sanityinc/time-subtract-millis after-init-time before-init-time))))
+
+(provide 'init-sas-prop)
