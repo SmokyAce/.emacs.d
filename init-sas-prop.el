@@ -40,12 +40,35 @@
 (require 'init-gui-frames)
 (require 'init-ido)
 
-(require 'mvg-auto-complete)
-
 (require 'init-sessions)
 (require 'init-fonts)
 
+(require 'init-textile)
+(require 'init-markdown)
+
+(require 'init-git)
+(require 'init-github)
+
+(require 'init-misc)
+
+(require 'mvg-auto-complete)
+(require 'mvg-javascript)
+(require 'mvg-web)
+(require 'mvg-jade)
+(require 'mvg-json)
+
+(require 'mvg-apache)
+(require 'mvg-nginx)
+
+(require 'mvg-paredit)
+
+(require 'sas-init-linum)
+(require 'sas-init-bs)
+(require 'sas-init-sr-speedbar)
+(require 'sas-init-yasnippet)
 (require 'sas-init-ergoemacs)
+(require 'sas-init-mmm)
+
 
 ;;----------------------------------------------------------------------------
 ;; Locales (setting them earlier in this file doesn't work in X)
